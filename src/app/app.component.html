@@ -1,0 +1,29 @@
+<!-- <div class="row col-md-6">
+  <div class="form-group">
+    <div>
+      <label>
+        SignPad
+      </label>
+      <button class="btn btn-primary" (click)="salesAdvisorSign.clear()" title="Clear">Clear</button>
+    </div>
+    <div class="card h-auto">
+      <signature-pad #salesAdvisorSign id="signaturepad" #signaturePad [options]="options" (onBeginEvent)="drawStart()"
+        (onEndEvent)="drawComplete()">
+      </signature-pad>
+    </div>
+  </div>
+</div> -->
+
+
+<div #signatureContainer style="width: 100%;border: 1px solid black;">
+  <signature-pad id="signaturepad" #signaturePad [options]="options" (onBeginEvent)="drawStart()"
+    (onEndEvent)="drawComplete()">
+  </signature-pad>
+</div>
+
+<button class="btn btn-primary" (click)="clear()" title="Clear">Clear</button>
+
+<div class="row">
+  <span>Preview</span>
+</div>
+<img [src]="signature" *ngIf="signature">
